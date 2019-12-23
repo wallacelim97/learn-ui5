@@ -19,6 +19,7 @@
 
 
 		<script>
+		
 		// workaround begin: start a mock server
 			jQuery.sap.require("sap.ui.core.util.MockServer");
 			var oMockServer = new sap.ui.core.util.MockServer({
@@ -30,6 +31,7 @@
 			});
 			oMockServer.start();
 			// workaround end
+		
 
 			sap.ui.getCore().attachInit(function () {
 				/*
