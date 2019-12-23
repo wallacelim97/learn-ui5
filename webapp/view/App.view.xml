@@ -16,8 +16,18 @@
 									</pages>
 								</Carousel>
 								<Button text="{i18n>showHelloButtonText}" press="onShowHello"/>
-								<Input value="{helloPanel>/recipient/name}" description="Hello {helloPanel>/recipient/name}" valueLiveUpdate="true" width="60%"/>
+								<Input
+									value="{
+										path: 'helloPanel>/recipient/amount',
+										type: 'sap.ui.model.type.Float',
+										formatOptions: {minFractionDigits: 2},
+										constraints: {maximum : 3000}
+									}"
+									description="Hello {helloPanel>/recipient/name}"
+									valueLiveUpdate="false"
+									width="60%"/>
 							</IconTabFilter>
+
 							<IconTabFilter id="layouts" text="{i18n>layoutFilter}">
 								<MessageStrip type="Information" showIcon="true" text="Here's a Form Layout inside an Icon Tab Bar …"/>
 								<f:SimpleForm id="simpleFormChange" title="Address" editable="true" class="editableForm sapUiSmallMarginTopBottom">
@@ -52,20 +62,23 @@
 								<content>
 									<List headerText="{i18n>productListTitle}" items="{/ProductSet}">
 										<items>
-											<ObjectListItem 
-											title="{Name}" 
-											number ="{Price}" 
-											intro="{ProductID}"
-											numberState="{=${Price} > 500 ? 'Error' : 'Success'}">
+											<ObjectListItem title="{Name}"
+												number="{
+													parts: [
+														{path: 'Price'},
+														{path: 'CurrencyCode'}
+													],
+													type: 'sap.ui.model.type.Currency',
+													formatOptions: {
+														showMeasure: false
+													}
+												}"
+												numberUnit="{CurrencyCode}"
+												intro="{ProductID}" 
+												numberState="{=${Price} > 500 ? 'Error' : 'Success'}">
 												<firstStatus>
 													<!-- The '.' denotes the current view's controller's path -->
-													<ObjectStatus text = "{
-														parts : [
-															{path : 'WeightUnit'},
-															{path : 'WeightMeasure'}
-														], 
-														formatter : '.formatter.delivery'
-													}"/>
+													<ObjectStatus text="{ parts : [ {path : 'WeightUnit'}, {path : 'WeightMeasure'} ], formatter : '.formatter.delivery' }"/>
 												</firstStatus>
 											</ObjectListItem>
 										</items>
