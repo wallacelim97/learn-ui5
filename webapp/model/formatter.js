@@ -10,7 +10,7 @@ sap.ui.define([], function() {
 		 * @param {integer} iWeight the weight to be formatted
 		 * @returns {string} sValue the delivery method
 		 */
-		delivery: function(sMeasure, iWeight) {
+		delivery : function(sMeasure, iWeight) {
 			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle(),
 				sResult = "";
 
