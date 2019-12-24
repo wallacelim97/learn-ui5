@@ -2,7 +2,15 @@ sap.ui.define([], function() {
 	"use strict";
 
 	return {
-		delivery : function(sMeasure, iWeight) {
+
+		/**
+		 * @public
+		 * Determines a delivery method based on the weight of a product
+		 * @param {string} sMeasure the measure of the weight to be formatted
+		 * @param {integer} iWeight the weight to be formatted
+		 * @returns {string} sValue the delivery method
+		 */
+		delivery: function(sMeasure, iWeight) {
 			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle(),
 				sResult = "";
 
@@ -16,7 +24,7 @@ sap.ui.define([], function() {
 			} else {
 				sResult = oResourceBundle.getText("formatterCarrierDelivery");
 			}
-
+			
 			return sResult;
 		}
 	};
