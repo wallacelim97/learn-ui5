@@ -15,7 +15,7 @@
 							<IconTabFilter id="start" text="{i18n>gettingStartedFilter}">
 								<Carousel>
 									<pages>
-										<Image src="https://upload.wikimedia.org/wikipedia/commons/9/9f/GEO_Globe.jpg" height="600px"/>
+										<Image src="https://trello-attachments.s3.amazonaws.com/5dfc244f2273c1483761f9ba/5dfc256f13aeaf202033b5b7/151e0a1547ddf34dcd4ae0a1c3e9ec6f/image.png" height="600px"/>
 										<Image
 											src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Wikipedia_Hello_World_Graphic.svg/2000px-Wikipedia_Hello_World_Graphic.svg.png"
 											height="600px"/>
